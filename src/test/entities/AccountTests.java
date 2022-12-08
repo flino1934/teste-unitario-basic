@@ -47,5 +47,14 @@ public class AccountTests {
 		Assertions.assertTrue(result == initialBalnce);//esta testando se o valor total sacado é igual ao valor em conta
 	}
 	
-
+	@Test//vai testar o fluxo perfeito do withdraw
+	public void withDrawShouldDecreaseBalanceWhenShouldWhenSufficientBalance() {
+		
+		Account acc = AccountFactory.createAccount(800.0);
+		
+		acc.withdraw(500);
+		
+		Assertions.assertEquals(300, acc.getBalance()); 
+	}
+	
 }
