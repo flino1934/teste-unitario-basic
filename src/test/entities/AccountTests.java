@@ -7,7 +7,7 @@ import entities.Account;
 
 public class AccountTests {
 	
-	@Test
+	@Test//deve realizar um deposito quando amount for positivo
 	public void depositShouldIncreaseBalanceWhenPositiveAmount() {
 		
 		double amount = 200.0;
@@ -17,6 +17,19 @@ public class AccountTests {
 		acc.deposit(amount);
 		
 		Assertions.assertEquals(expectedValue, acc.getBalance());
+	}
+	
+	@Test//não faça nada quando amount for negativo 
+	public void depositShouldDoNothigWhenNegativeAmount() {
+		
+		double expectedValue = 100.0;
+		Account acc = new Account(1L, expectedValue);
+		double amount = -2000.0;
+		
+		acc.deposit(amount);
+		
+		Assertions.assertEquals(expectedValue, acc.getBalance());
+		
 	}
 
 }
