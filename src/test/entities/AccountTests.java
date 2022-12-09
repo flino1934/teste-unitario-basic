@@ -56,5 +56,15 @@ public class AccountTests {
 		
 		Assertions.assertEquals(300, acc.getBalance()); 
 	}
-	
+
+	@Test//vai testar o fluxo que retorna uma exception
+	public void withDrawShouldThrowExceptionWhenInsufficientBalance() {
+
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			Account acc = AccountFactory.createAccount(800.0);
+
+			acc.withdraw(801.0);
+		});
+
+	}
 }

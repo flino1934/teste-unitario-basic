@@ -7,10 +7,6 @@ public class Account {
 	private Long id;
 	private Double balance;
 
-	public Account() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public Account(Long id, Double balance) {
 		this.id = id;
 		this.balance = balance;
@@ -49,7 +45,7 @@ public class Account {
 	}
 
 	public double fullWithdraw() {
-		
+
 		double aux = balance;
 		balance = 0.0;
 
